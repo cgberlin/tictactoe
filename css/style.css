@@ -72,3 +72,9 @@ p {
   text-shadow: 2px 2px 5px black;
   transition: all 0.5s ease;
 }
+@media only screen and (max-width: 600px) {
+    .container {
+        width:20rem;
+        height:20rem;
+    }
+}
