@@ -5,7 +5,11 @@ function getRandomNumber() {
 }
 $('.container').on('click', 'div', function(){
   numberOfMoves++;
-  if ($(this).children().length <= 0){
+  if (numberOfMoves === 9){
+    alert('TIE!');
+    resetGame();
+  }
+  else if ($(this).children().length <= 0){
     var theirNumber = $(this).attr('id');
     theirNumber = parseInt(theirNumber);
     spacesAlreaduUsed.push(theirNumber);
