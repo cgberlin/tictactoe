@@ -3,12 +3,12 @@ var numberOfMoves = 0;
 function getRandomNumber() {
     return Math.floor(Math.random() * (9 - 1 + 1)) + 1;
 }
-$('.container').on('click', 'div', function(numberOfMoves){
+$('.container').on('click', 'div', function(){
   numberOfMoves+= 1;
-  alert(numberOfMoves);
-  if (numberOfMoves === 8){
+  console.log(numberOfMoves);
+  if (numberOfMoves == 9){
+    $(this).append('<p>X</p>');
     checkForWin();
-    alert('TIE!');
     resetGame();
   }
   else if ($(this).children().length <= 0){
