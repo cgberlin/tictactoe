@@ -3,9 +3,11 @@ var numberOfMoves = 0;
 function getRandomNumber() {
     return Math.floor(Math.random() * (9 - 1 + 1)) + 1;
 }
-$('.container').on('click', 'div', function(){
-  numberOfMoves++;
-  if (numberOfMoves === 9){
+$('.container').on('click', 'div', function(numberOfMoves){
+  numberOfMoves+= 1;
+  alert(numberOfMoves);
+  if (numberOfMoves === 8){
+    checkForWin();
     alert('TIE!');
     resetGame();
   }
@@ -33,7 +35,7 @@ function getNextMove(){
   numberOfMoves++;
   var divToInsert = '#'+ourNextMove;
   $(divToInsert).append('<p>O</p>');
-  if (numberOfMoves >= 3){
+  if (numberOfMoves >= 6){
   checkForWin();
 }
 }
