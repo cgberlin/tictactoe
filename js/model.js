@@ -30,6 +30,7 @@ function getNextMove(){
   }
   while(checkIfUsed !== -1);
   spacesAlreaduUsed.push(ourNextMove);
+  numberOfMoves++;
   var divToInsert = '#'+ourNextMove;
   $(divToInsert).append('<p>O</p>');
   if (numberOfMoves >= 3){
